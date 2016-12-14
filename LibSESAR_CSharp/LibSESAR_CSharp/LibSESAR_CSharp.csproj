@@ -40,10 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\SesarSamples.cs" />
-    <Compile Include="Models\SesarSample.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="LibSESARSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>LibSESARSettings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SampleSubmissionResponse.cs" />
+    <Compile Include="Models\SampleSubmissionSampleResultRecord.cs" />
+    <Compile Include="Models\SampleSubmissionValidRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\samplev2.cs" />
+    <Compile Include="SESARRequest.cs" />
+    <Compile Include="SESARSampleSubmissionRequest.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="LibSESARSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>LibSESARSettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<results>
+  <valid code="InvalidXML">no</valid>
+  <error>Element '{http://app.geosamples.org}publish_date':[facet 'pattern'] The value '2016-03-0' is not accepted by the patter '([0-9]{4}-[0-9]{2})\(.........)'</error>
+  <error>Element '{http://app.geosamples.org}publish_date':[facet 'pattern'] The value '2016-03-0' is not accepted by the patter '([0-9]{4}-[0-9]{2})\(.........)'</error>
+</results>

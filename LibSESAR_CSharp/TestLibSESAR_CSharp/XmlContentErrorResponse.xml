@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<results>
+  <sample name="your sample name">
+    <valid code="InvalidSample">no</valid><status>Not Saved</status>
+    <error>The User Code ABC in your IGSN ABC123456 does not belong to you.</error> ......
+  </sample>
+</results>
