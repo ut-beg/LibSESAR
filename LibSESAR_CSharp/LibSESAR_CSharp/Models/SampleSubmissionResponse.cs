@@ -26,6 +26,6 @@ namespace LibSESAR_CSharp.Models
         public List<string> ErrorList { get; set; }
 
         [XmlIgnore]
-        public int StatusCode { get; set; }
+        public System.Net.HttpStatusCode StatusCode { get; set; }
     }
 }

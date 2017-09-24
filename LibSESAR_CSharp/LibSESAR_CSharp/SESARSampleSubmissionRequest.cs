@@ -44,6 +44,7 @@ namespace LibSESAR_CSharp
                     stream.Position = 0;
 
                     ret = (Models.SampleSubmissionResponse) xs.Deserialize(stream);
+                    ret.StatusCode = StatusCode;
                 }
 
                 return ret;

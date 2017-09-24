@@ -73,6 +73,13 @@ namespace LibSESAR_CSharp
 
         }
 
+        public HttpStatusCode StatusCode
+        {
+            get;
+            set;
+
+        } = HttpStatusCode.Unused;
+
         /// <summary>
         /// Generates whatever is required in the request body.
         /// </summary>
@@ -126,7 +133,8 @@ namespace LibSESAR_CSharp
                 hwresp = (HttpWebResponse)wresp;
 
                 WebHeaderCollection whc = hwresp.Headers;
-                
+
+                StatusCode = hwresp.StatusCode;
             }
             catch (WebException ex)
             {

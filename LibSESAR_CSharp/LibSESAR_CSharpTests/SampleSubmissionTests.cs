@@ -1,5 +1,6 @@
 ﻿using System;
-using System.Collections.Generic
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LibSESAR_CSharpTests
@@ -8,7 +9,7 @@ namespace LibSESAR_CSharpTests
     public class SampleSubmissionTests
     {
         [TestMethod]
-        public async void TestSuccessfulSubmit()
+        public async Task TestSuccessfulSubmit()
         {
             //Create the sample submission request
             LibSESAR_CSharp.SESARSampleSubmissionRequest request = new LibSESAR_CSharp.SESARSampleSubmissionRequest();
@@ -42,7 +43,7 @@ namespace LibSESAR_CSharpTests
             LibSESAR_CSharp.Models.SampleSubmissionResponse response = request.RequestResultModel;
 
             //We had a successful HTTP request, right?
-            if(response == null || response.StatusCode != (int) System.Net.HttpStatusCode.OK)
+            if(response == null || response.StatusCode != System.Net.HttpStatusCode.OK)
             {
                 Assert.Fail("Request did not succeed.");
             }

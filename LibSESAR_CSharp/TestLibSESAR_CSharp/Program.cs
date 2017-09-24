@@ -49,6 +49,8 @@ namespace TestLibSESAR_CSharp
                         sample1.sample_type = LibSESAR_CSharp.Models.sample_type.Toothpick;
                         sample1.material = LibSESAR_CSharp.Models.material.Rock;
                         sample1.is_private = LibSESAR_CSharp.Models.is_private.Item1;
+                        ///...
+                        ///Set addition properties of the sample here.
 
                         samples.Add(sample1);
                     }
@@ -56,7 +58,8 @@ namespace TestLibSESAR_CSharp
                     samps.sample = samples.ToArray();
 
                     LibSESAR_CSharp.SESARSampleSubmissionRequest sssr = new LibSESAR_CSharp.SESARSampleSubmissionRequest();
-                    sssr.ServiceEndpoint = LibSESAR_CSharp.Constants.SESAREndpointProductionUrlBase;
+                    //The library defaults to submitting records to the test instance.  You'd set this to the production instance for production use.
+                    //sssr.ServiceEndpoint = LibSESAR_CSharp.Constants.SESAREndpointProductionUrlBase;
                     sssr.Samples = samps;
 
                     sssr.UserName = username;
@@ -72,7 +75,7 @@ namespace TestLibSESAR_CSharp
 
                         if(resp != null)
                         {
-                            if (resp.StatusCode == 200)
+                            if (resp.StatusCode == System.Net.HttpStatusCode.OK)
                             {
                                 Console.WriteLine("Success.");
 
@@ -82,7 +85,7 @@ namespace TestLibSESAR_CSharp
                                     Console.WriteLine("Name: " + resp.SampleList[i].Name + " IGSN: " + resp.SampleList[i].IGSN);
                                 }
                             }
-                            else if(resp.StatusCode == 400) //An error
+                            else if(resp.StatusCode == System.Net.HttpStatusCode.BadRequest) //An error in our request parameters.
                             {
                                 //XMl Syntax error
                                 if(resp.Valid != null && resp.Valid.Value == "no" && resp.Valid.Code == "InvalidXML")
@@ -97,7 +100,7 @@ namespace TestLibSESAR_CSharp
                                     }
                                 }
                             }
-                            else if(resp.StatusCode == 401)
+                            else if(resp.StatusCode == System.Net.HttpStatusCode.Unauthorized)
                             {
                                 Console.WriteLine("Incorrect username or password.");
                             }

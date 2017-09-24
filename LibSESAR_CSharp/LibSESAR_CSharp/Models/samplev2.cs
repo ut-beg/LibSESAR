@@ -1592,11 +1592,11 @@ namespace LibSESAR_CSharp.Models
     public enum is_private
     {
 
-        /// <remarks/>
+        /// False - not private <remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("0")]
         Item0,
 
-        /// <remarks/>
+        /// True - it is private.<remarks/>
         [System.Xml.Serialization.XmlEnumAttribute("1")]
         Item1,
     }
